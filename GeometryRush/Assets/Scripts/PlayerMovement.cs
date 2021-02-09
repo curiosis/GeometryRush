@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         posX = -1;
+        posY = -1;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -30,7 +32,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
-            checkPlayerMove();
+            if (posX == rb2D.position.x && posY == rb2D.position.y)
+            {
+                SceneManager.LoadScene(0);
+            }
 
             posX = rb2D.position.x;
             posY = rb2D.position.y;
@@ -49,13 +54,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void checkPlayerMove()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (posX == rb2D.position.x && posY == rb2D.position.y)
-        {
-            Debug.Log("END");
-            BackgroundMelody.stopMelody = true;
-        }
-            
+        if(collision.CompareTag("Spikes"))
+            SceneManager.LoadScene(0);
     }
 }

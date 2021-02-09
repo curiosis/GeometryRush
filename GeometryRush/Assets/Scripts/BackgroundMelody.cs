@@ -17,7 +17,6 @@ public class BackgroundMelody : MonoBehaviour
     void Update()
     {
         PlayMusic();
-        StopMusic();
     }
 
     void PlayMusic()
@@ -28,11 +27,5 @@ public class BackgroundMelody : MonoBehaviour
                 audioSource.Play();
                 startMelody = true;
             }
-    }
-
-    void StopMusic()
-    {
-        if(stopMelody)
-            audioSource.Stop();
     }
 }
