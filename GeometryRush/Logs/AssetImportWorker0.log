@@ -1,0 +1,210 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.0b10 (19f63eee530c) revision 1701438'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'pl' Physical Memory: 8119 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.0b10\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Github/GeometryRush/GeometryRush
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51330
+Successfully changed project path to: D:/Github/GeometryRush/GeometryRush
+D:/Github/GeometryRush/GeometryRush
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 37.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.0b10 (19f63eee530c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.0b10/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Github/GeometryRush/GeometryRush/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 950 (ID=0x1402)
+    Vendor:   
+    VRAM:     2007 MB
+    Driver:   27.21.14.5671
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.0b10/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.0b10/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.0b10/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56396
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.0b10/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001836 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 40.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.186 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000761 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Github\GeometryRush\GeometryRush\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 40.52 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.116 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1782 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2221.
+Total: 2.477300 ms (FindLiveObjects: 0.524600 ms CreateObjectMapping: 0.112700 ms MarkObjects: 1.730900 ms  DeleteObjects: 0.107800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes
+  artifactKey: Guid(90dd383957af37b4b8eb9b7677e93020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(90dd383957af37b4b8eb9b7677e93020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bab328a7251162208ff36b828c2727c') in 0.010439 seconds
+  Import took 0.029164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d7c56da9d4f8bea1ed14dcc6f33a5c7') in 0.025181 seconds
+  Import took 0.043035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.797392 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aebf494824b5c8d81be503cedee8a740') in 0.014498 seconds
+  Import took 0.035320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.920081 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(74b21055e5eb26943b3faac1a3bbee70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(74b21055e5eb26943b3faac1a3bbee70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea7bd6a08225b82de554fe6768c70afa') in 0.012087 seconds
+  Import took 0.019538 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004191 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(74b21055e5eb26943b3faac1a3bbee70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(74b21055e5eb26943b3faac1a3bbee70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea7bd6a08225b82de554fe6768c70afa') in 0.005534 seconds
+  Import took 0.011448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.784112 seconds.
+  path: Assets/NewBehaviourScript.cs
+  artifactKey: Guid(d0e347798f6c2154289c650f3058c07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NewBehaviourScript.cs using Guid(d0e347798f6c2154289c650f3058c07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fc4e8b42154e903338a1426978bcbce') in 0.037324 seconds
+  Import took 0.046885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011216 seconds.
+  path: Assets/NewBehaviourScript.cs
+  artifactKey: Guid(d0e347798f6c2154289c650f3058c07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NewBehaviourScript.cs using Guid(d0e347798f6c2154289c650f3058c07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fc4e8b42154e903338a1426978bcbce') in 0.007050 seconds
+  Import took 0.011465 seconds .
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.0b10/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002857 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\Github\GeometryRush\GeometryRush\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 36.99 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000689 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Github\GeometryRush\GeometryRush\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.996 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.0 MB.
+System memory in use after: 50.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2226.
+Total: 2.454600 ms (FindLiveObjects: 0.540100 ms CreateObjectMapping: 0.265900 ms MarkObjects: 1.544600 ms  DeleteObjects: 0.102500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.588569 seconds.
+  path: Assets/Music
+  artifactKey: Guid(11cf6aea37bd15b46952edaaf9658da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Music using Guid(11cf6aea37bd15b46952edaaf9658da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22242c01604f979807c4c9cb761fe442') in 0.013894 seconds
+  Import took 0.019078 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.267260 seconds.
+  path: Assets/Sprites
+  artifactKey: Guid(7395dbf08a0c3994f8c3c3e2348dbe90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites using Guid(7395dbf08a0c3994f8c3c3e2348dbe90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a39438685202d1d9afad65c36bca5e7a') in 0.013634 seconds
+  Import took 0.018428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.741264 seconds.
+  path: Assets/Sounds
+  artifactKey: Guid(59257b07002488c4daeea1b3f678bffa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds using Guid(59257b07002488c4daeea1b3f678bffa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0395d2b42a098a3c90408ceb7a3b3a58') in 0.013643 seconds
+  Import took 0.025016 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.452274 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(a65575b6eaf337240898a663c6228d9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(a65575b6eaf337240898a663c6228d9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3b7310113d03f91638d773c902685e4') in 0.014543 seconds
+  Import took 0.041632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.171491 seconds.
+  path: Assets/New Folder
+  artifactKey: Guid(ec7bdaba08d631347ba36fd3819ae786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Folder using Guid(ec7bdaba08d631347ba36fd3819ae786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c31352d0e43f20c354a08b62a69bfa') in 0.014367 seconds
+  Import took 0.021726 seconds .
+
