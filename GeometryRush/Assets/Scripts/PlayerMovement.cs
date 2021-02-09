@@ -26,26 +26,36 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
+        if (LevelManager.startLevel)
+        {
+            rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
-        checkPlayerMove();
-        
-        posX = rb2D.position.x;
-        posY = rb2D.position.y;    
+            checkPlayerMove();
+
+            posX = rb2D.position.x;
+            posY = rb2D.position.y;
+        }
     }
 
     private void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (LevelManager.startLevel)
         {
-            rb2D.velocity = Vector3.up * jumpForce;
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                rb2D.velocity = Vector3.up * jumpForce;
+            }
         }
     }
 
     void checkPlayerMove()
     {
         if (posX == rb2D.position.x && posY == rb2D.position.y)
+        {
             Debug.Log("END");
+            BackgroundMelody.stopMelody = true;
+        }
+            
     }
 }
