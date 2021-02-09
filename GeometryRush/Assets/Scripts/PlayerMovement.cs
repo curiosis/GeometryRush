@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
-    private float posX;
+    private float posX, posY;
 
     void Start()
     {
@@ -28,10 +28,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
-        if (posX == rb2D.position.x)
-            Debug.Log("END");
+        checkPlayerMove();
         
         posX = rb2D.position.x;
+        posY = rb2D.position.y;    
     }
 
     private void Update()
@@ -39,7 +39,13 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            rb2D.velocity = Vector2.up * jumpForce;
+            rb2D.velocity = Vector3.up * jumpForce;
         }
+    }
+
+    void checkPlayerMove()
+    {
+        if (posX == rb2D.position.x && posY == rb2D.position.y)
+            Debug.Log("END");
     }
 }
