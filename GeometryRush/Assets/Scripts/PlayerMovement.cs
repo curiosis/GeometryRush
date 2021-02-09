@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -25,22 +26,17 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        Movement();
-        Debug.Log(posX);
-        Debug.Log(rb2D.position.x);
-
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
         if (posX == rb2D.position.x)
             Debug.Log("END");
-
         
         posX = rb2D.position.x;
     }
 
-    void Movement()
+    private void Update()
     {
-        rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             rb2D.velocity = Vector2.up * jumpForce;
