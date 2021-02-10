@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-    private SpriteRenderer sprite;
-    private TrailRenderer trailRenderer;
 
     public float speed;
 
@@ -21,17 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     private float posX, posY;
 
-    public GameObject deadEffect, player;
-
-    private bool dead=false;
 
     void Start()
     {
         posX = -1;
         posY = -1;
         rb2D = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        trailRenderer = GetComponent<TrailRenderer>();
     }
 
     
@@ -43,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 PlayerCollision.playerDead = true;
             }
+
             posX = rb2D.position.x;
             posY = rb2D.position.y;
     }
