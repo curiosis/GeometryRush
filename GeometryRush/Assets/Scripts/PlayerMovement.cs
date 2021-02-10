@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("ExtraJump"))
         {
-            rb2D.velocity = Vector3.up * jumpForce;
+            rb2D.velocity = Vector3.up * (jumpForce * 1.5f);
         }
     }
 
