@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        type = 0;
         posX = -1;
         posY = -1;
         rb2D = GetComponent<Rigidbody2D>();
@@ -49,14 +48,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(type == 0 || type == 2)
+        ChangeRbValues();
+
+        if (type == 0 || type == 2)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
             if (isGrounded)
             {
                 animator.SetBool("isJumping", false);
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     if (type == 0)
                         rb2D.velocity = Vector3.up * jumpForce;
@@ -64,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
                         rb2D.velocity = Vector3.down * jumpForce;
                 }
             }
-            else
+            if(!isGrounded && type!=1)
             {
                 animator.SetBool("isJumping", true);
             }
@@ -74,9 +75,9 @@ public class PlayerMovement : MonoBehaviour
             
         if(type == 1)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) || Input.GetButton("Jump"))
             {
-                rb2D.velocity = Vector3.up * jumpForce / 3;
+                rb2D.gravityScale = -3;
             }
         }
     }
@@ -99,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.mass = 5;
             rb2D.gravityScale = -5;
-            transform.Rotate(0, 0, 180);
         }
     }
 }

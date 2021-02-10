@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    public Camera cam;
-
+    SpriteRenderer sprite;
+    public Color color;
 
     void Start()
     {
-        
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = cam.transform.position;
+        if (LevelManager.flashBool)
+            sprite.color = color;
+
     }
 }

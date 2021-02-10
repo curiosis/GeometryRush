@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Spikes
   - ExtraJump
+  - ChangeType0
+  - ChangeType1
+  - ChangeType2
   layers:
   - Default
   - TransparentFX
