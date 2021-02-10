@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2868070143245570167}
   - component: {fileID: 2868070143245570164}
   - component: {fileID: 2868070143245570166}
+  - component: {fileID: 3704841417953876162}
   - component: {fileID: 2868070143245570161}
   m_Layer: 0
   m_Name: Player
@@ -183,6 +184,20 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
+  deadEffect: {fileID: 3881601695079328084, guid: b7e117ddc00c70641887abafbf6dd5fc, type: 3}
+  player: {fileID: 0}
+--- !u!114 &3704841417953876162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2868070143245570123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4b48eeedf75f945a569772818c93c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   deadEffect: {fileID: 3881601695079328084, guid: b7e117ddc00c70641887abafbf6dd5fc, type: 3}
 --- !u!96 &2868070143245570161
 TrailRenderer:

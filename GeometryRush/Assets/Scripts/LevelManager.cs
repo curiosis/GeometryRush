@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
 
         distance = (player.position.x / finish.position.x);
 
-        Debug.Log(distance);
+        Debug.Log((distance*100).ToString("0")+"%");
 
         if (Input.GetKeyUp(KeyCode.Space) && !startLevel)
         {

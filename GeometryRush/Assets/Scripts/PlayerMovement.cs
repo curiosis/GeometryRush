@@ -41,8 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (posX == rb2D.position.x && posY == rb2D.position.y)
             {
-                
-                StartCoroutine(Dead());
+                PlayerCollision.playerDead = true;
             }
             posX = rb2D.position.x;
             posY = rb2D.position.y;
@@ -55,38 +54,5 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb2D.velocity = Vector3.up * jumpForce;
             }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Spikes"))
-        {
-            StartCoroutine(Dead());
-        }
-
-        if (collision.CompareTag("ExtraJump"))
-        {
-            rb2D.velocity = Vector3.up * (jumpForce * 1.5f);
-        }
-    }
-
-    IEnumerator Dead()
-    {
-        if (!dead)
-        {
-            speed = 0f;
-            sprite.color = new Color(0, 0, 0, 0);
-            trailRenderer.enabled = false;
-            Instantiate(deadEffect, transform.position, transform.rotation);
-            dead = true;
-            BackgroundMelody.stopMelody = true;
-            yield return new WaitForSeconds(1);
-            ChangeScene();
-        }
-    }
-
-    void ChangeScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
