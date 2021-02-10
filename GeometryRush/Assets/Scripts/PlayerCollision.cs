@@ -13,6 +13,8 @@ public class PlayerCollision : MonoBehaviour
     private PlayerMovement player;
     private Rigidbody2D rb2D;
 
+    public GameObject plane;
+
     void Start()
     {
         playerDead = false;
@@ -70,6 +72,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.CompareTag("ChangeType1"))
         {
             player.type = 1;
+            plane.SetActive(true);
             LevelManager.flash = true;
         }
             
