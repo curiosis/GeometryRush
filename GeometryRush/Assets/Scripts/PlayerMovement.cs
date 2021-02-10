@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    private SpriteRenderer sprite;
+    private TrailRenderer trailRenderer;
+
     public float speed;
 
     public float jumpForce;
@@ -18,45 +21,72 @@ public class PlayerMovement : MonoBehaviour
 
     private float posX, posY;
 
+    public GameObject deadEffect, player;
+
+    private bool dead=false;
+
     void Start()
     {
         posX = -1;
         posY = -1;
         rb2D = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        trailRenderer = GetComponent<TrailRenderer>();
     }
 
     
     void FixedUpdate()
     {
-        if (LevelManager.startLevel)
-        {
             rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
             if (posX == rb2D.position.x && posY == rb2D.position.y)
             {
-                SceneManager.LoadScene(0);
+                
+                StartCoroutine(Dead());
             }
-
             posX = rb2D.position.x;
             posY = rb2D.position.y;
-        }
     }
 
     private void Update()
     {
-        if (LevelManager.startLevel)
-        {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
             if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
                 rb2D.velocity = Vector3.up * jumpForce;
             }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Spikes"))
-            SceneManager.LoadScene(0);
+        if (collision.CompareTag("Spikes"))
+        {
+            StartCoroutine(Dead());
+        }
+
+        if (collision.CompareTag("ExtraJump"))
+        {
+            rb2D.velocity = Vector3.up * jumpForce;
+        }
+    }
+
+    IEnumerator Dead()
+    {
+        if (!dead)
+        {
+            speed = 0f;
+            sprite.color = new Color(0, 0, 0, 0);
+            trailRenderer.enabled = false;
+            Instantiate(deadEffect, transform.position, transform.rotation);
+            dead = true;
+            BackgroundMelody.stopMelody = true;
+            yield return new WaitForSeconds(1);
+            ChangeScene();
+        }
+    }
+
+    void ChangeScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

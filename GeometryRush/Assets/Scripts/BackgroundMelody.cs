@@ -11,21 +11,18 @@ public class BackgroundMelody : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        stopMelody = false;
     }
 
     
     void Update()
     {
-        PlayMusic();
+        Stop();
     }
 
-    void PlayMusic()
+    void Stop()
     {
-        if (LevelManager.startLevel)
-            if (!startMelody)
-            {
-                audioSource.Play();
-                startMelody = true;
-            }
+        if (stopMelody)
+            audioSource.Stop();
     }
 }
