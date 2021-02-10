@@ -60,5 +60,24 @@ public class PlayerCollision : MonoBehaviour
         {
             rb2D.velocity = Vector3.up * (player.jumpForce * 1.5f);
         }
+
+        if (collision.CompareTag("ChangeType0"))
+        {
+            player.type = 0;
+        }
+            
+
+        if (collision.CompareTag("ChangeType1"))
+        {
+            player.type = 1;
+            LevelManager.flash = true;
+        }
+            
+
+        if (collision.CompareTag("ChangeType2"))
+        {
+            player.type = 2;
+        }
+            
     }
 }
