@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    private Animator animator;
 
     public float speed;
 
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
-    private float posX, posY, posYgroundCheck;
+    private float posX, posY;
 
     public int type;
 
@@ -28,13 +29,14 @@ public class PlayerMovement : MonoBehaviour
         posX = -1;
         posY = -1;
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         ChangeRbValues();
     }
 
     
     void FixedUpdate()
     {
-            rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(speed, rb2D.velocity.y) ;
 
             if (posX == rb2D.position.x && posY == rb2D.position.y)
             {
@@ -50,13 +52,23 @@ public class PlayerMovement : MonoBehaviour
         if(type == 0 || type == 2)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+
+            if (isGrounded)
             {
-                if(type == 0)
-                    rb2D.velocity = Vector3.up * jumpForce;
-                if (type == 2)
-                    rb2D.velocity = Vector3.down * jumpForce;
+                animator.SetBool("isJumping", false);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (type == 0)
+                        rb2D.velocity = Vector3.up * jumpForce;
+                    if (type == 2)
+                        rb2D.velocity = Vector3.down * jumpForce;
+                }
             }
+            else
+            {
+                animator.SetBool("isJumping", true);
+            }
+            
         }
 
             
