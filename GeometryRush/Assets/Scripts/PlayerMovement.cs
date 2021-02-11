@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private float posX, posY;
 
     public int type;
-
 
     void Start()
     {

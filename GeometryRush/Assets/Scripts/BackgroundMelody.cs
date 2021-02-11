@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundMelody : MonoBehaviour
@@ -14,11 +12,6 @@ public class BackgroundMelody : MonoBehaviour
     }
     
     void Update()
-    {
-        Stop();
-    }
-
-    void Stop()
     {
         if (stopMelody)
             audioSource.Stop();
