@@ -5,30 +5,39 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public static bool flashBool = false, flash;
+    public static bool flashBool = false, flash, faster;
     public Transform player, finish;
     public static float distance;
 
     public CanvasGroup image;
     public Color color;
 
+    float x = 1f;
+
     void Update()
     {
+        if (faster)
+            x = 0.5f;
+        else
+            x = 1;
+
         if (flashBool)
         {
             image.alpha -= Time.deltaTime;
             if(image.alpha <= 0)
             {
                 image.alpha = 0;
-                Background.index += 1;
+                if(!faster)
+                    Background.index += 1;
                 flashBool = false;
+                faster = false;
             }
         }
 
         if (flash)
         {
             flashBool = true;
-            image.alpha = 1;
+            image.alpha = x;
             flash = false;
         }
 
