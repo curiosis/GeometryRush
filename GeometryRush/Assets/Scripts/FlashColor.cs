@@ -16,6 +16,6 @@ public class FlashColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        image.color = background.color[Background.index];
+        image.color = background.color[Background.index+1];
     }
 }
