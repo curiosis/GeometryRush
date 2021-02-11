@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class LevelManager : MonoBehaviour
 
     float x = 1f;
 
+    public CinemachineVirtualCamera cinemachineCamera;
+    CinemachineBasicMultiChannelPerlin noise;
+
+    private void Start()
+    {
+        noise = cinemachineCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+    }
+
     void Update()
     {
         if (faster)
@@ -23,16 +32,21 @@ public class LevelManager : MonoBehaviour
 
         if (flashBool)
         {
+            ShakeCamera(1.5f, 1.5f);
             image.alpha -= Time.deltaTime;
-            if(image.alpha <= 0)
+            if (image.alpha <= 0)
             {
                 image.alpha = 0;
-                if(!faster)
+
+                if (!faster)
                     Background.index += 1;
+
                 flashBool = false;
                 faster = false;
             }
         }
+        else
+            ShakeCamera(0f, 0f);
 
         if (flash)
         {
@@ -42,7 +56,13 @@ public class LevelManager : MonoBehaviour
         }
 
         distance = (player.position.x / finish.position.x);
-        //Debug.Log((distance*100).ToString("0")+"%");
-        //Debug.Log(flashBool);
+        Debug.Log((distance * 100).ToString("0") + "%");
+        Debug.Log(flashBool);
+    }
+
+    void ShakeCamera(float amplitude, float frequency)
+    {
+        noise.m_AmplitudeGain = amplitude;
+        noise.m_FrequencyGain = frequency;
     }
 }
