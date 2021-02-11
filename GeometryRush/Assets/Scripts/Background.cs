@@ -17,9 +17,9 @@ public class Background : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.flashBool)
+        if (LevelManager.flashBool && !LevelManager.faster)
         {
-            sprite.color = color[index];
+            sprite.color = color[index+1];
         }
             
 
