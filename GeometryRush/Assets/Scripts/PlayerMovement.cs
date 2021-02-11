@@ -88,18 +88,21 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.mass = 5;
             rb2D.gravityScale = 5;
+            rb2D.transform.localScale = new Vector3(1f, 1f);
         }
 
         if (type == 1)
         {
             rb2D.mass = 3;
             rb2D.gravityScale = 3;
+            rb2D.transform.localScale = new Vector3(0.85f, 0.85f);
         }
 
         if (type == 2)
         {
             rb2D.mass = 5;
             rb2D.gravityScale = -5;
+            rb2D.transform.localScale = new Vector3(1f, 1f);
         }
     }
 }
