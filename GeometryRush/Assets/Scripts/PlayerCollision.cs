@@ -53,14 +53,10 @@ public class PlayerCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Spikes"))
-        {
             PlayerCollision.playerDead = true;
-        }
 
         if (collision.CompareTag("ExtraJump"))
-        {
             rb2D.velocity = Vector3.up * (player.jumpForce * 1.5f);
-        }
 
         if (collision.CompareTag("ChangeType0"))
         {
@@ -68,7 +64,6 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(false);
             LevelManager.flash = true;
         }
-            
 
         if (collision.CompareTag("ChangeType1"))
         {
@@ -76,7 +71,6 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(true);
             LevelManager.flash = true;
         }
-            
 
         if (collision.CompareTag("ChangeType2"))
         {
@@ -84,6 +78,5 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(false);
             LevelManager.flash = true;
         }
-            
     }
 }

@@ -15,10 +15,6 @@ public class Background : MonoBehaviour
     void Update()
     {
         if (LevelManager.flashBool && !LevelManager.faster)
-        {
             sprite.color = color[index+1];
-        }
-            
-
     }
 }

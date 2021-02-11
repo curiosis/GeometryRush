@@ -54,7 +54,6 @@ public class LevelManager : MonoBehaviour
 
         distance = (player.position.x / finish.position.x);
         Debug.Log((distance * 100).ToString("0") + "%");
-        Debug.Log(flashBool);
     }
 
     void ShakeCamera(float amplitude, float frequency)
