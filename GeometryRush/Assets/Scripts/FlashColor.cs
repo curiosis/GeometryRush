@@ -13,6 +13,6 @@ public class FlashColor : MonoBehaviour
 
     void Update()
     {
-        image.color = background.color[Background.index+1];
+        image.color = background.color[Background.index];
     }
 }
