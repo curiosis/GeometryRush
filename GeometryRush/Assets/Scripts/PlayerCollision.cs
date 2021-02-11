@@ -66,6 +66,8 @@ public class PlayerCollision : MonoBehaviour
         if (collision.CompareTag("ChangeType0"))
         {
             player.type = 0;
+            plane.SetActive(false);
+            LevelManager.flash = true;
         }
             
 
@@ -80,6 +82,8 @@ public class PlayerCollision : MonoBehaviour
         if (collision.CompareTag("ChangeType2"))
         {
             player.type = 2;
+            plane.SetActive(false);
+            LevelManager.flash = true;
         }
             
     }

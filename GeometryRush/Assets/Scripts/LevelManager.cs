@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
             if(image.alpha <= 0)
             {
                 image.alpha = 0;
+                Background.index += 1;
                 flashBool = false;
             }
         }

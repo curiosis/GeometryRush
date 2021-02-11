@@ -5,10 +5,12 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
     SpriteRenderer sprite;
-    public Color color;
+    public Color[] color;
+    public static int index;
 
     void Start()
     {
+        index = 0;
         sprite = GetComponent<SpriteRenderer>();
     }
 
@@ -16,7 +18,10 @@ public class Background : MonoBehaviour
     void Update()
     {
         if (LevelManager.flashBool)
-            sprite.color = color;
+        {
+            sprite.color = color[index];
+        }
+            
 
     }
 }
