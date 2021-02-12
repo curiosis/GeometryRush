@@ -3,8 +3,8 @@ using UnityEngine;
 public class BassFlashEffect : MonoBehaviour
 {
     AudioSource audioSource;
-    readonly float[,] bassTime = new float[2,63];
-    int index = 0;
+    readonly float[,] bassTime = new float[2,103];
+    int index = 61;
     readonly float offset = 0.05f;
 
     public static bool debug;
@@ -18,12 +18,16 @@ public class BassFlashEffect : MonoBehaviour
     
     void Update()
     {
-        ChangeCameraSize();
+        CheckFlashAvailable();
         if (debug)
+        {
             Debug.Log(audioSource.time);
+            debug = false;
+        }
+            
     }
 
-    void ChangeCameraSize()
+    void CheckFlashAvailable()
     {
         if (audioSource.time >= bassTime[0, index] && audioSource.time <= bassTime[0, index] + offset)
         {
@@ -98,5 +102,48 @@ public class BassFlashEffect : MonoBehaviour
         bassTime[0, 58] = 79.114f;
         bassTime[0, 59] = 79.645f;
         bassTime[0, 60] = 79.984f;
+
+        bassTime[0, 61] = 0.983f;
+        bassTime[0, 62] = 1.486f;
+        bassTime[0, 63] = 1.994f;
+        bassTime[0, 64] = 2.662f;
+        bassTime[0, 65] = 3.339f;
+        bassTime[0, 66] = 4.015f;
+        bassTime[0, 67] = 4.689f;
+        bassTime[0, 68] = 5.351f;
+        bassTime[0, 69] = 6.019f;
+        bassTime[0, 70] = 6.695f;
+        bassTime[0, 71] = 7.375f;
+        bassTime[0, 72] = 8.043f;
+        bassTime[0, 73] = 8.713f;
+        bassTime[0, 74] = 9.546f;
+        bassTime[0, 75] = 10.061f;
+        bassTime[0, 76] = 11.149f;
+        bassTime[0, 77] = 11.902f;
+        bassTime[0, 78] = 12.743f;
+        bassTime[0, 79] = 13.414f;
+        bassTime[0, 80] = 14.091f;
+        bassTime[0, 81] = 15.170f;
+        bassTime[0, 82] = 15.850f;
+        bassTime[0, 83] = 16.526f;
+        bassTime[0, 84] = 17.444f;
+        bassTime[0, 85] = 18.280f;
+        bassTime[0, 86] = 18.956f;
+        bassTime[0, 87] = 19.639f;
+        bassTime[0, 88] = 20.298f;
+        bassTime[0, 89] = 21.230f;
+        bassTime[0, 90] = 21.645f;
+        bassTime[0, 91] = 22.313f;
+        bassTime[0, 92] = 22.995f;
+        bassTime[0, 93] = 23.657f;
+        bassTime[0, 94] = 24.334f;
+        bassTime[0, 95] = 25.017f;
+        bassTime[0, 96] = 25.675f;
+        bassTime[0, 97] = 26.335f;
+        bassTime[0, 98] = 27.017f;
+        bassTime[0, 99] = 27.675f;
+        bassTime[0, 100] = 28.373f;
+        bassTime[0, 101] = 29.043f;
+        bassTime[0, 102] = 29.882f;
     }
 }
