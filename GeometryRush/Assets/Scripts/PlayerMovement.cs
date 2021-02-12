@@ -30,15 +30,13 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-            rb2D.velocity = new Vector2(speed, rb2D.velocity.y) ;
+        rb2D.velocity = new Vector2(speed, rb2D.velocity.y) ;
 
-            if (posX == rb2D.position.x && posY == rb2D.position.y)
-            {
-                PlayerCollision.playerDead = true;
-            }
+        if (posX == rb2D.position.x && posY == rb2D.position.y)
+            PlayerCollision.playerDead = true;
 
-            posX = rb2D.position.x;
-            posY = rb2D.position.y;
+        posX = rb2D.position.x;
+        posY = rb2D.position.y;
     }
 
     private void Update()
