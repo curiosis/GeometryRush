@@ -4,15 +4,30 @@ using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
+    public Background background;
     public Slider progressBar;
+    public Image progressBarFill;
+    Color color;
+
     public Text progressValue;
     bool anim;
     int d;
 
     void Update()
     {
-
         progressBar.value = LevelManager.distance;
+        if (LevelManager.flashBool)
+        {
+            color = background.color[Background.index];
+            color.r += 0.2f;
+            color.g += 0.2f;
+            color.b += 0.2f;
+        }
+        else
+            progressBarFill.color = color;
+        
+        
+
         d = (int)(LevelManager.distance * 100);
         progressValue.text = d.ToString("0") + "%";
 
