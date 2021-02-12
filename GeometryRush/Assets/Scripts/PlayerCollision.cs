@@ -56,18 +56,25 @@ public class PlayerCollision : MonoBehaviour
             PlayerCollision.playerDead = true;
 
         if (collision.CompareTag("ExtraJump"))
-            rb2D.velocity = Vector3.up * (player.jumpForce * 1.5f);
+        {
+            if (player.type == 0)
+                rb2D.velocity = Vector3.up * (player.jumpForce * 1.5f);
+            else if (player.type == 2)
+                rb2D.velocity = Vector3.down * (player.jumpForce * 1.5f);
+        }
 
         if (collision.CompareTag("ChangeType0"))
         {
+            BackgroundMelody.startMelody = true;
             player.type = 0;
             plane.SetActive(false);
-            Background.index += 1;
+            Background.index = 3;
             LevelManager.flash = true;
         }
 
         if (collision.CompareTag("ChangeType1"))
         {
+            Debug.Log(BackgroundMelody.time);
             player.type = 1;
             plane.SetActive(true);
             Background.index += 1;
@@ -76,9 +83,10 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("ChangeType2"))
         {
+            BackgroundMelody.startMelody = true;
             player.type = 2;
             plane.SetActive(false);
-            Background.index += 1;
+            Background.index = 3;
             LevelManager.flash = true;
         }
     }

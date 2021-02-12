@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
         if (flashBool)
         {
-            ShakeCamera(1.5f, 1.5f);
+            //ShakeCamera(1f, 1f);
             image.alpha -= Time.deltaTime;
             if (image.alpha <= 0)
             {
@@ -38,8 +38,8 @@ public class LevelManager : MonoBehaviour
                 faster = false;
             }
         }
-        else
-            ShakeCamera(0f, 0f);
+        //else
+            //ShakeCamera(0f, 0f);
 
         if (flash)
         {
@@ -49,7 +49,6 @@ public class LevelManager : MonoBehaviour
         }
 
         distance = (player.position.x / finish.position.x);
-        Debug.Log((distance * 100).ToString("0") + "%");
     }
 
     void ShakeCamera(float amplitude, float frequency)
