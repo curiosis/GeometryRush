@@ -68,7 +68,7 @@ public class PlayerCollision : MonoBehaviour
             BackgroundMelody.startMelody = true;
             player.type = 0;
             plane.SetActive(false);
-            Background.index = 3;
+            Background.index = 4;
             LevelManager.flash = true;
         }
 
