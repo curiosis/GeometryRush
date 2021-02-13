@@ -65,7 +65,6 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("ChangeType0"))
         {
-            BackgroundMelody.startMelody = true;
             player.type = 0;
             plane.SetActive(false);
             Background.index = 4;
@@ -74,7 +73,6 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("ChangeType1"))
         {
-            Debug.Log(BackgroundMelody.time);
             player.type = 1;
             plane.SetActive(true);
             Background.index += 1;
