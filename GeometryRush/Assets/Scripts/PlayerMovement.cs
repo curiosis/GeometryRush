@@ -49,7 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGrounded)
             {
-                animator.SetBool("isJumping", false);
+                //animator.SetBool("isJumping", false);
+                //rb2D.SetRotation(0f);
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     if (type == 0)
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if(!isGrounded && type!=1)
             {
-                animator.SetBool("isJumping", true);
+                //animator.SetBool("isJumping", true);
             }
             
         }

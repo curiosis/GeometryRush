@@ -65,6 +65,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("ChangeType0"))
         {
+            Debug.Log(BackgroundMelody.time);
             player.type = 0;
             plane.SetActive(false);
             Background.index += 1;
@@ -74,6 +75,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("ChangeType1"))
         {
+            Debug.Log(BackgroundMelody.time);
             player.type = 1;
             plane.SetActive(true);
             Background.index += 1;
@@ -83,6 +85,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("ChangeType2"))
         {
+            Debug.Log(BackgroundMelody.time);
             player.type = 2;
             plane.SetActive(false);
             Background.index += 1;
