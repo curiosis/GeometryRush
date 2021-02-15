@@ -15,6 +15,6 @@ public class BackgroundMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb2d.transform.position = new Vector3(18 + Player.transform.position.x - Player.transform.position.x/32, transform.position.y);
+        rb2d.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y);
     }
 }
