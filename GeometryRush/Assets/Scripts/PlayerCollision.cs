@@ -67,8 +67,9 @@ public class PlayerCollision : MonoBehaviour
         {
             player.type = 0;
             plane.SetActive(false);
-            Background.index = 4;
+            Background.index += 1;
             LevelManager.flash = true;
+            rb2D.SetRotation(0f);
         }
 
         if (collision.CompareTag("ChangeType1"))
@@ -77,15 +78,16 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(true);
             Background.index += 1;
             LevelManager.flash = true;
+            rb2D.SetRotation(0f);
         }
 
         if (collision.CompareTag("ChangeType2"))
         {
-            BackgroundMelody.startMelody = true;
             player.type = 2;
             plane.SetActive(false);
-            Background.index = 3;
+            Background.index += 1;
             LevelManager.flash = true;
+            rb2D.SetRotation(0f);
         }
     }
 }
