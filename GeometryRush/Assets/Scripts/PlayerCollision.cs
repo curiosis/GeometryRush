@@ -70,7 +70,7 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(false);
             Background.index += 1;
             LevelManager.flash = true;
-            rb2D.SetRotation(0f);
+            rb2D.transform.rotation = Quaternion.identity;
         }
 
         if (collision.CompareTag("ChangeType1"))
@@ -80,7 +80,7 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(true);
             Background.index += 1;
             LevelManager.flash = true;
-            rb2D.SetRotation(0f);
+            rb2D.transform.rotation = Quaternion.identity;
         }
 
         if (collision.CompareTag("ChangeType2"))
@@ -90,7 +90,7 @@ public class PlayerCollision : MonoBehaviour
             plane.SetActive(false);
             Background.index += 1;
             LevelManager.flash = true;
-            rb2D.SetRotation(0f);
+            rb2D.transform.rotation = Quaternion.identity;
         }
     }
 }
