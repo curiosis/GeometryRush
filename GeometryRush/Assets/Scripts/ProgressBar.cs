@@ -7,7 +7,7 @@ public class ProgressBar : MonoBehaviour
     public Background background;
     public Slider progressBar;
     public Image progressBarFill;
-    Color color;
+    Color color = new Color(140,80,140);
 
     public Text progressValue;
     bool anim;
