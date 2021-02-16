@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false, rotatePlayer = true;
 
     public GameObject pauseMenuUI, progressBar, progressPercent, soundButton;
-    public GameObject rotateMark, progressBarMark, progressPercentMark;
+    public GameObject[] marks;
 
     private void Update()
     {
@@ -42,12 +42,12 @@ public class PauseMenu : MonoBehaviour
     {
         if (rotatePlayer)
         {
-            rotateMark.SetActive(false);
+            marks[0].SetActive(false);
             rotatePlayer = false;
         }
         else
         {
-            rotateMark.SetActive(true);
+            marks[0].SetActive(true);
             rotatePlayer = true;
         }
     }
@@ -56,26 +56,41 @@ public class PauseMenu : MonoBehaviour
     {
         if (progressBar.activeSelf == true)
         {
-            progressBarMark.SetActive(false);
+            marks[1].SetActive(false);
             progressBar.SetActive(false);
         }
         else
         {
-            progressBarMark.SetActive(true);
+            marks[1].SetActive(true);
             progressBar.SetActive(true);
         }
+    }
+
+    public void ShakeCamera()
+    {
+        if (LevelManager.shakeCamera)
+        {
+            marks[3].SetActive(false);
+            LevelManager.shakeCamera = false;
+        }
+        else
+        {
+            marks[3].SetActive(true);
+            LevelManager.shakeCamera = true;
+        }
+
     }
 
     public void ProgressPercent()
     {
         if (progressPercent.activeSelf == true)
         {
-            progressPercentMark.SetActive(false);
+            marks[2].SetActive(false);
             progressPercent.SetActive(false);
         }
         else
         {
-            progressPercentMark.SetActive(true);
+            marks[2].SetActive(true);
             progressPercent.SetActive(true);
         }
     }

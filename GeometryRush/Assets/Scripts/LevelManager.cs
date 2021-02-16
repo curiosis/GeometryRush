@@ -3,7 +3,7 @@ using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static bool flashBool = false, flash, faster;
+    public static bool flashBool = false, flash, faster, shakeCamera = true;
     public Transform player, finish;
     public static float distance;
 
@@ -29,17 +29,17 @@ public class LevelManager : MonoBehaviour
 
         if (flashBool)
         {
-            //ShakeCamera(1f, 1f);
+            if(shakeCamera)
+                ShakeCamera(1f, 1f);
             image.alpha -= Time.deltaTime;
             if (image.alpha <= 0)
             {
                 image.alpha = 0;
+                ShakeCamera(0f, 0f);
                 flashBool = false;
                 faster = false;
             }
         }
-        //else
-            //ShakeCamera(0f, 0f);
 
         if (flash)
         {
