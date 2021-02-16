@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 
         posX = rb2D.position.x;
         posY = rb2D.position.y;
+
+        
     }
 
     private void Update()
@@ -49,9 +51,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGrounded)
             {
-                animator.SetBool("isJumping", false);
-                rb2D.transform.rotation = Quaternion.identity;
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                rb2D.transform.rotation.Set(0.0f, 0.0f, 0.0f, 1.0f);
+
+                if (PauseMenu.rotatePlayer)
+                    animator.SetBool("isJumping", false);
+
+                if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && PauseMenu.gameIsPaused == false )
                 {
                     if (type == 0)
                         rb2D.velocity = Vector3.up * jumpForce;
@@ -61,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
             }
             if(!isGrounded && type!=1)
             {
-                animator.SetBool("isJumping", true);
+                if(PauseMenu.rotatePlayer)
+                    animator.SetBool("isJumping", true);
             }
             
         }
@@ -69,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
             
         if(type == 1)
         {
-            if (Input.GetMouseButton(0) || Input.GetButton("Jump"))
+            if ((Input.GetMouseButton(0) || Input.GetButton("Jump")) && PauseMenu.gameIsPaused == false)
             {
                 rb2D.gravityScale = -3;
             }
