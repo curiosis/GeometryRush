@@ -9,6 +9,7 @@ TagManager:
   - ChangeType0
   - ChangeType1
   - ChangeType2
+  - PlayerPreview
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TrailUI
+    uniqueID: 3390957689
     locked: 0

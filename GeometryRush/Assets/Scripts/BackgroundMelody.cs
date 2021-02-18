@@ -3,7 +3,7 @@ using UnityEngine;
 public class BackgroundMelody : MonoBehaviour
 {
     private AudioSource audioSource;
-    public static bool stopMelody, startMelody;
+    public static bool stopMelody, startMelody, pauseMelody, resumeMelody;
     public static float time;
     
     void Start()
@@ -22,6 +22,23 @@ public class BackgroundMelody : MonoBehaviour
             audioSource.Play();
             startMelody = false;
         }
-            
+
+        if (pauseMelody)
+            Pause();
+
+        if (resumeMelody)
+            Resume();
+    }
+
+    void Pause()
+    {
+        audioSource.Pause();
+        pauseMelody = false;
+    }
+
+    void Resume()
+    {
+        audioSource.Play();
+        resumeMelody = false;
     }
 }

@@ -1,21 +1,22 @@
+using System.Globalization;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
-    private Animator animator;
+    Rigidbody2D rb2D;
+    Animator animator;
+    SpriteRenderer sprite;
 
     public float speed;
 
     public float jumpForce;
 
-    private bool isGrounded;
+    bool isGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
 
-    private float posX, posY;
-
+    float posX, posY;
     public int type;
 
     void Start()
@@ -24,7 +25,20 @@ public class PlayerMovement : MonoBehaviour
         posY = -1;
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        SetPlayerColor();
         ChangeRbValues();
+    }
+
+    void SetPlayerColor()
+    {
+        string r = PlayerPrefs.GetString("PlayerColor").Substring(5, 5);
+        string g = PlayerPrefs.GetString("PlayerColor").Substring(12, 5);
+        string b = PlayerPrefs.GetString("PlayerColor").Substring(19, 5);
+        float rf = float.Parse(r, CultureInfo.InvariantCulture);
+        float gf = float.Parse(g, CultureInfo.InvariantCulture);
+        float bf = float.Parse(b, CultureInfo.InvariantCulture);
+        sprite.color = new Color(rf, gf, bf);
     }
 
     
@@ -37,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
         posX = rb2D.position.x;
         posY = rb2D.position.y;
+
+        
     }
 
     private void Update()
@@ -49,9 +65,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGrounded)
             {
-                animator.SetBool("isJumping", false);
-                rb2D.transform.rotation = Quaternion.identity;
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                rb2D.transform.rotation.Set(0.0f, 0.0f, 0.0f, 1.0f);
+
+                if (PauseMenu.rotatePlayer)
+                    animator.SetBool("isJumping", false);
+
+                if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && PauseMenu.gameIsPaused == false )
                 {
                     if (type == 0)
                         rb2D.velocity = Vector3.up * jumpForce;
@@ -61,7 +80,8 @@ public class PlayerMovement : MonoBehaviour
             }
             if(!isGrounded && type!=1)
             {
-                animator.SetBool("isJumping", true);
+                if(PauseMenu.rotatePlayer)
+                    animator.SetBool("isJumping", true);
             }
             
         }
@@ -69,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             
         if(type == 1)
         {
-            if (Input.GetMouseButton(0) || Input.GetButton("Jump"))
+            if ((Input.GetMouseButton(0) || Input.GetButton("Jump")) && PauseMenu.gameIsPaused == false)
             {
                 rb2D.gravityScale = -3;
             }
