@@ -52,6 +52,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("StartMelody"))
+            BackgroundMelody.startMelody = true;
+
         if (collision.CompareTag("Spikes"))
             PlayerCollision.playerDead = true;
 
