@@ -15,12 +15,4 @@ public class PlayerColor : MonoBehaviour
         playerImage = player.GetComponent<Image>();
         playerImage.color = image.color;
     }
-
-    public void ChangeStyle()
-    {
-        player = GameObject.FindGameObjectWithTag("PlayerPreview");
-        image = GetComponent<Image>();
-        playerImage = player.GetComponent<Image>();
-        playerImage.sprite = image.sprite;
-    }
 }

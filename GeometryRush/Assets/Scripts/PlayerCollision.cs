@@ -92,5 +92,14 @@ public class PlayerCollision : MonoBehaviour
             LevelManager.flash = true;
             rb2D.transform.rotation.Set(0.0f, 0.0f, 0.0f, 1.0f);
         }
+
+        if (collision.CompareTag("ChangeType3"))
+        {
+            player.type = 3;
+            plane.SetActive(false);
+            Background.index += 1;
+            LevelManager.flash = true;
+            rb2D.transform.rotation.Set(0.0f, 0.0f, 0.0f, 1.0f);
+        }
     }
 }

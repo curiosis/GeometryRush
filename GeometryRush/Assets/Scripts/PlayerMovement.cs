@@ -19,11 +19,6 @@ public class PlayerMovement : MonoBehaviour
     float posX, posY;
     public int type;
 
-    private void Awake()
-    {
-        
-    }
-
     void Start()
     {
         posX = -1;
@@ -32,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         GetPlayerColor();
-        //GetPlayerStyle();
         ChangeRbValues();
     }
 
@@ -46,17 +40,6 @@ public class PlayerMovement : MonoBehaviour
         float bf = float.Parse(b, CultureInfo.InvariantCulture);
         sprite.color = new Color(rf, gf, bf);
     }
-
-    void GetPlayerStyle()
-    {
-        Debug.Log(sprite.sprite.name.ToString());
-        string s = PlayerPrefs.GetString("PlayerStyle");
-        Debug.Log(s);
-        Sprite sp = Resources.Load<Sprite>(s);
-        sprite.sprite = sp;
-        
-    }
-
     
     void FixedUpdate()
     {
@@ -97,7 +80,19 @@ public class PlayerMovement : MonoBehaviour
                 if(PauseMenu.rotatePlayer)
                     animator.SetBool("isJumping", true);
             }
-            
+        }
+
+        if(type == 3)
+        {
+            if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && PauseMenu.gameIsPaused == false)
+            {
+                if(rb2D.gravityScale > 0)
+                    rb2D.gravityScale = -150;
+                else
+                {
+                    rb2D.gravityScale = 150;
+                }
+            }
         }
 
             
@@ -130,6 +125,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.mass = 5;
             rb2D.gravityScale = -5;
+            rb2D.transform.localScale = new Vector3(1f, 1f);
+        }
+
+        if(type == 3)
+        {
+            rb2D.mass = 100;
             rb2D.transform.localScale = new Vector3(1f, 1f);
         }
     }

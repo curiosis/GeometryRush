@@ -14,6 +14,8 @@ public class BackgroundMelody : MonoBehaviour
     
     void Update()
     {
+        Debug.Log(time);
+
         if (stopMelody)
             audioSource.Stop();
         time = audioSource.time;

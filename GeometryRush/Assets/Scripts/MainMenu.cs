@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
         string g = PlayerPrefs.GetString("PlayerColor").Substring(12, 5);
         string b = PlayerPrefs.GetString("PlayerColor").Substring(19, 5);
         player.color = new Color(float.Parse(r, CultureInfo.InvariantCulture.NumberFormat), float.Parse(g, CultureInfo.InvariantCulture.NumberFormat), float.Parse(b, CultureInfo.InvariantCulture.NumberFormat));
-        player.sprite.name = PlayerPrefs.GetString("PlayerStyle");
     }
 
     public void SelectLevel()
@@ -65,11 +64,6 @@ public class MainMenu : MonoBehaviour
     public void ChangeColor(Color color)
     {
         player.color = color;
-    }
-
-    public void ChangeStyle(Sprite sprite)
-    {
-        player.sprite = sprite;
     }
 
     public void SaveColor()
