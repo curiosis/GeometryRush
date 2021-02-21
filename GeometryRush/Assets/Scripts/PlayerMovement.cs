@@ -19,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     float posX, posY;
     public int type;
 
+    private void Awake()
+    {
+        
+    }
+
     void Start()
     {
         posX = -1;
@@ -26,11 +31,12 @@ public class PlayerMovement : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        SetPlayerColor();
+        GetPlayerColor();
+        //GetPlayerStyle();
         ChangeRbValues();
     }
 
-    void SetPlayerColor()
+    void GetPlayerColor()
     {
         string r = PlayerPrefs.GetString("PlayerColor").Substring(5, 5);
         string g = PlayerPrefs.GetString("PlayerColor").Substring(12, 5);
@@ -39,6 +45,16 @@ public class PlayerMovement : MonoBehaviour
         float gf = float.Parse(g, CultureInfo.InvariantCulture);
         float bf = float.Parse(b, CultureInfo.InvariantCulture);
         sprite.color = new Color(rf, gf, bf);
+    }
+
+    void GetPlayerStyle()
+    {
+        Debug.Log(sprite.sprite.name.ToString());
+        string s = PlayerPrefs.GetString("PlayerStyle");
+        Debug.Log(s);
+        Sprite sp = Resources.Load<Sprite>(s);
+        sprite.sprite = sp;
+        
     }
 
     
@@ -51,8 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
         posX = rb2D.position.x;
         posY = rb2D.position.y;
-
-        
     }
 
     private void Update()
