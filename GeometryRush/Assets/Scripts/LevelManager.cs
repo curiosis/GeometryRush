@@ -47,7 +47,6 @@ public class LevelManager : MonoBehaviour
             image.alpha = x;
             flash = false;
         }
-        Debug.Log(distance);
         distance = (player.position.x / finish.position.x);
     }
 

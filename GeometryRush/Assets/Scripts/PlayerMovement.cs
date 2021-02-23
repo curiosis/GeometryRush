@@ -43,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        rb2D.velocity = new Vector2(speed, rb2D.velocity.y) ;
+        if(type != 4)
+            rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
         if (posX == rb2D.position.x && posY == rb2D.position.y)
             PlayerCollision.playerDead = true;
@@ -95,6 +96,21 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if(type == 4)
+        {
+            if ((Input.GetMouseButton(0) || Input.GetButton("Jump")) && PauseMenu.gameIsPaused == false)
+            {
+                rb2D.gravityScale = -3;
+                rb2D.velocity = new Vector2(speed, speed);
+            }
+            else
+            {
+                rb2D.gravityScale = 3;
+                rb2D.velocity = new Vector2(speed, -speed);
+            }
+                
+        }
+
             
         if(type == 1)
         {
@@ -131,6 +147,12 @@ public class PlayerMovement : MonoBehaviour
         if(type == 3)
         {
             rb2D.mass = 100;
+            rb2D.transform.localScale = new Vector3(1f, 1f);
+        }
+
+        if(type == 4)
+        {
+            rb2D.mass = 5;
             rb2D.transform.localScale = new Vector3(1f, 1f);
         }
     }
