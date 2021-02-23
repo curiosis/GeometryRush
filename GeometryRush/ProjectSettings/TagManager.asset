@@ -12,6 +12,7 @@ TagManager:
   - PlayerPreview
   - StartMelody
   - ChangeType3
+  - ChangeType4
   layers:
   - Default
   - TransparentFX
