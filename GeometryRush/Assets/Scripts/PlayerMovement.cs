@@ -26,11 +26,11 @@ public class PlayerMovement : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        SetPlayerColor();
+        GetPlayerColor();
         ChangeRbValues();
     }
 
-    void SetPlayerColor()
+    void GetPlayerColor()
     {
         string r = PlayerPrefs.GetString("PlayerColor").Substring(5, 5);
         string g = PlayerPrefs.GetString("PlayerColor").Substring(12, 5);
@@ -40,19 +40,17 @@ public class PlayerMovement : MonoBehaviour
         float bf = float.Parse(b, CultureInfo.InvariantCulture);
         sprite.color = new Color(rf, gf, bf);
     }
-
     
     void FixedUpdate()
     {
-        rb2D.velocity = new Vector2(speed, rb2D.velocity.y) ;
+        if(type != 4)
+            rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
 
         if (posX == rb2D.position.x && posY == rb2D.position.y)
             PlayerCollision.playerDead = true;
 
         posX = rb2D.position.x;
         posY = rb2D.position.y;
-
-        
     }
 
     private void Update()
@@ -83,7 +81,34 @@ public class PlayerMovement : MonoBehaviour
                 if(PauseMenu.rotatePlayer)
                     animator.SetBool("isJumping", true);
             }
-            
+        }
+
+        if(type == 3)
+        {
+            if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && PauseMenu.gameIsPaused == false)
+            {
+                if(rb2D.gravityScale > 0)
+                    rb2D.gravityScale = -150;
+                else
+                {
+                    rb2D.gravityScale = 150;
+                }
+            }
+        }
+
+        if(type == 4)
+        {
+            if ((Input.GetMouseButton(0) || Input.GetButton("Jump")) && PauseMenu.gameIsPaused == false)
+            {
+                rb2D.gravityScale = -3;
+                rb2D.velocity = new Vector2(speed, speed);
+            }
+            else
+            {
+                rb2D.gravityScale = 3;
+                rb2D.velocity = new Vector2(speed, -speed);
+            }
+                
         }
 
             
@@ -116,6 +141,18 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.mass = 5;
             rb2D.gravityScale = -5;
+            rb2D.transform.localScale = new Vector3(1f, 1f);
+        }
+
+        if(type == 3)
+        {
+            rb2D.mass = 100;
+            rb2D.transform.localScale = new Vector3(1f, 1f);
+        }
+
+        if(type == 4)
+        {
+            rb2D.mass = 5;
             rb2D.transform.localScale = new Vector3(1f, 1f);
         }
     }

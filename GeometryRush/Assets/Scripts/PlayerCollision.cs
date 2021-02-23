@@ -52,6 +52,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("StartMelody"))
+            BackgroundMelody.startMelody = true;
+
         if (collision.CompareTag("Spikes"))
             PlayerCollision.playerDead = true;
 
@@ -84,6 +87,24 @@ public class PlayerCollision : MonoBehaviour
         if (collision.CompareTag("ChangeType2"))
         {
             player.type = 2;
+            plane.SetActive(false);
+            Background.index += 1;
+            LevelManager.flash = true;
+            rb2D.transform.rotation.Set(0.0f, 0.0f, 0.0f, 1.0f);
+        }
+
+        if (collision.CompareTag("ChangeType3"))
+        {
+            player.type = 3;
+            plane.SetActive(false);
+            Background.index += 1;
+            LevelManager.flash = true;
+            rb2D.transform.rotation.Set(0.0f, 0.0f, 0.0f, 1.0f);
+        }
+
+        if (collision.CompareTag("ChangeType4"))
+        {
+            player.type = 4;
             plane.SetActive(false);
             Background.index += 1;
             LevelManager.flash = true;

@@ -29,7 +29,7 @@ public class BassFlashEffect : MonoBehaviour
 
     void CheckFlashAvailable()
     {
-        if (audioSource.time >= bassTime[0, index] && audioSource.time <= bassTime[0, index] + offset)
+        if (audioSource.time >= bassTime[1, index] && audioSource.time <= bassTime[1, index] + offset)
         {
             LevelManager.faster = true;
             LevelManager.flash = true;
@@ -146,5 +146,41 @@ public class BassFlashEffect : MonoBehaviour
         bassTime[0, 101] = 28.373f;
         bassTime[0, 102] = 29.043f;
         bassTime[0, 103] = 29.882f;
+
+        bassTime[1, 0] = 11.893f;
+        bassTime[1, 1] = 12.623f;
+        bassTime[1, 2] = 13.566f;
+        bassTime[1, 3] = 14.140f;
+        bassTime[1, 4] = 14.850f;
+        bassTime[1, 5] = 15.608f;
+        bassTime[1, 6] = 16.552f;
+        bassTime[1, 7] = 17.096f;
+        bassTime[1, 8] = 17.816f;
+        bassTime[1, 9] = 18.564f;
+
+        bassTime[1, 10] = 19.478f;
+        bassTime[1, 11] = 20.042f;
+        bassTime[1, 12] = 20.812f;
+        bassTime[1, 13] = 21.540f;
+        bassTime[1, 14] = 22.454f;
+        bassTime[1, 15] = 23.012f;
+        bassTime[1, 16] = 35.612f;
+        bassTime[1, 17] = 36.351f;
+        bassTime[1, 18] = 37.275f;
+        bassTime[1, 19] = 37.809f;
+
+        bassTime[1, 20] = 38.555f;
+        bassTime[1, 21] = 39.297f;
+        bassTime[1, 22] = 40.231f;
+        bassTime[1, 23] = 40.795f;
+        bassTime[1, 24] = 41.605f;
+        bassTime[1, 25] = 42.283f;
+        bassTime[1, 26] = 43.187f;
+        bassTime[1, 27] = 43.771f;
+        bassTime[1, 28] = 44.490f;
+        bassTime[1, 29] = 45.249f;
+
+        bassTime[1, 30] = 46.153f;
+        bassTime[1, 31] = 46.717f;
     }
 }

@@ -69,5 +69,7 @@ public class MainMenu : MonoBehaviour
     public void SaveColor()
     {
         PlayerPrefs.SetString("PlayerColor", player.color.ToString());
+        PlayerPrefs.SetString("PlayerStyle", player.sprite.ToString());
+        Debug.Log(player.sprite.rect.ToString());
     }
 }
