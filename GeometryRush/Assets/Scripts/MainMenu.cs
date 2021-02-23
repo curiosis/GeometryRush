@@ -72,4 +72,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetString("PlayerStyle", player.sprite.ToString());
         Debug.Log(player.sprite.rect.ToString());
     }
+
+    public void YoutubeOpen()
+    {
+        Application.OpenURL("https://www.youtube.com/channel/UCAXsFZgv9CRHqEBTEEte47A");
+    }
 }
