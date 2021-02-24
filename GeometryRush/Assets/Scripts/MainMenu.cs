@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public Canvas selectLevel, mainMenu, modeInfo, playerSett;
     public Button backToMainMenu;
     public Image player;
+    public CanvasGroup image;
 
     private void Start()
     {
@@ -18,6 +19,26 @@ public class MainMenu : MonoBehaviour
         string g = PlayerPrefs.GetString("PlayerColor").Substring(12, 5);
         string b = PlayerPrefs.GetString("PlayerColor").Substring(19, 5);
         player.color = new Color(float.Parse(r, CultureInfo.InvariantCulture.NumberFormat), float.Parse(g, CultureInfo.InvariantCulture.NumberFormat), float.Parse(b, CultureInfo.InvariantCulture.NumberFormat));
+    }
+
+    private void Update()
+    {
+        if (LevelManager.flashBool)
+        {
+            image.alpha -= Time.deltaTime;
+            if (image.alpha <= 0)
+            {
+                image.alpha = 0;
+                LevelManager.flashBool = false;
+            }
+        }
+
+        if (LevelManager.flash)
+        {
+            LevelManager.flashBool = true;
+            image.alpha = 1f;
+            LevelManager.flash = false;
+        }
     }
 
     public void SelectLevel()

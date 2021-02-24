@@ -3,7 +3,7 @@ using UnityEngine;
 public class BassFlashEffect : MonoBehaviour
 {
     AudioSource audioSource;
-    readonly float[,] bassTime = new float[2,104];
+    readonly float[,] bassTime = new float[3,104];
     int index = 0;
     readonly float offset = 0.05f;
 
@@ -182,5 +182,16 @@ public class BassFlashEffect : MonoBehaviour
 
         bassTime[1, 30] = 46.153f;
         bassTime[1, 31] = 46.717f;
+
+        bassTime[2, 0] = 1.535f;
+        bassTime[2, 1] = 2.011f;
+        bassTime[2, 2] = 2.482f;
+        bassTime[2, 3] = 2.949f;
+        bassTime[2, 4] = 3.420f;
+        bassTime[2, 5] = 3.987f;
+        bassTime[2, 6] = 4.444f;
+        bassTime[2, 7] = 4.821f;
+        bassTime[2, 8] = 5.292f;
+        bassTime[2, 9] = 6.231f;
     }
 }
