@@ -4534,7 +4534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 892468936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1028539097}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: LinkedInOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &892468936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4988,7 +5000,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1001829243}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1028539097}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: GitHubOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1001829243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5278,6 +5302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level1: Level_1
+  Level2: Level_2
   selectLevel: {fileID: 1389251204}
   mainMenu: {fileID: 1645493093}
   modeInfo: {fileID: 1650666313}
@@ -7918,7 +7943,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1028539097}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: StartLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17376,7 +17401,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2135300377}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1028539097}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StartLevel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2135300377
 MonoBehaviour:
   m_ObjectHideFlags: 0
