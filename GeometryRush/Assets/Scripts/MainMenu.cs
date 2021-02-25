@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public string Level1;
+    public string Level1, Level2;
     public Canvas selectLevel, mainMenu, modeInfo, playerSett;
     public Button backToMainMenu;
     public Image player;
@@ -69,9 +69,14 @@ public class MainMenu : MonoBehaviour
         backToMainMenu.gameObject.SetActive(false);
     }
 
-    public void StartGame()
+    public void StartLevel1()
     {
         SceneManager.LoadScene(Level1);
+    }
+
+    public void StartLevel2()
+    {
+        SceneManager.LoadScene(Level2);
     }
 
     IEnumerator Enumerator()
@@ -98,4 +103,16 @@ public class MainMenu : MonoBehaviour
     {
         Application.OpenURL("https://www.youtube.com/channel/UCAXsFZgv9CRHqEBTEEte47A");
     }
+
+    public void LinkedInOpen()
+    {
+        Application.OpenURL("https://www.linkedin.com/in/remigiusz-drobinski/");
+    }
+
+    public void GitHubOpen()
+    {
+        Application.OpenURL("https://github.com/curiosis");
+    }
+
+
 }
